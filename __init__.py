@@ -26,6 +26,8 @@ import bpy
 from . new_board import *
 from . menu import *
 from . rotate_tool import Rotate_tool_Operator
+from . move_tool import Move_tool_Operator
+from . changeUnitis import ToMillimeters_Operator
 
 # def panel_func(self, context):
 #     self.layout.operator(Add_new_board_Operator.bl_idname)
@@ -36,12 +38,14 @@ from . rotate_tool import Rotate_tool_Operator
 # def menu_draw(self, context):
 #     self.layout.operator("wm.save_homefile")
 
-
 classes = (
     Menu_marcenaria_Operator,
     Add_new_board_Operator,
-    Rotate_tool_Operator
+    Rotate_tool_Operator,
+    Move_tool_Operator,
+    ToMillimeters_Operator
     )
+
 
 def register():
     for cls in classes:
@@ -53,4 +57,3 @@ def unregister():
 
 if "__name__" == "__main__":
     register()
-

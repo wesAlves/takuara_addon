@@ -8,9 +8,9 @@ class Menu_marcenaria_Operator(bpy.types.Header):
 
     def draw(self, context):
         layout = self.layout
-   
+
+        layout.operator("object.tomillimeters" ,text = "To Milleters" )
         layout.operator("object.add_new_board", text = "Add new board")
         layout.operator("object.rotate_tool", text = "Rotate board")
+        layout.operator("object.move_tool", text = "Move board")
 
-
-        
