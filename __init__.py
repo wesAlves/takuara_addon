@@ -25,6 +25,7 @@ bl_info = {
 import bpy
 from . new_board import *
 from . menu import *
+from . rotate_tool import Rotate_tool_Operator
 
 # def panel_func(self, context):
 #     self.layout.operator(Add_new_board_Operator.bl_idname)
@@ -39,6 +40,7 @@ from . menu import *
 classes = (
     Menu_marcenaria_Operator,
     Add_new_board_Operator,
+    Rotate_tool_Operator
     )
 
 def register():

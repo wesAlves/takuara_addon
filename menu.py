@@ -10,6 +10,7 @@ class Menu_marcenaria_Operator(bpy.types.Header):
         layout = self.layout
    
         layout.operator("object.add_new_board", text = "Add new board")
+        layout.operator("object.rotate_tool", text = "Rotate board")
 
 
         
