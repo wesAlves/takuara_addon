@@ -29,7 +29,7 @@ from . rotate_tool import Rotate_tool_Operator
 from . move_tool import Move_tool_Operator
 from . changeUnitis import ToMillimeters_Operator
 from . clearScene import Delet_all_Operator
-
+from . cutPlan import Cut_plan_Operator
 # def panel_func(self, context):
 #     self.layout.operator(Add_new_board_Operator.bl_idname)
 
@@ -41,13 +41,14 @@ from . clearScene import Delet_all_Operator
 
 classes = (
     Add_new_board_Operator,
-    # Marcenaria_panel_Operator,
     Menu_marcenaria_Operator,
     Rotate_tool_Operator,
     Move_tool_Operator,
     ToMillimeters_Operator,
     newTool,
-    Delet_all_Operator
+    Delet_all_Operator,
+    Cut_plan_Operator,
+    # Marcenaria_panel_Operator,
     
     )
 
@@ -62,5 +63,5 @@ def unregister():
     for cls in classes:
         bpy.utils.unregister_class(cls)
 
-if "__name__" == "__main__":
+if __name__ == "__main__":
     register()
