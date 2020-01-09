@@ -51,6 +51,9 @@ class newTool(bpy.types.Panel):
         row.operator("object.tomillimeters", text = "Change to Millimeters")
         
         row = layout.row()
+        row.operator("object.cut_plan", text = 'Create cut plan')
+
+        row = layout.row()
         row.prop(obj, "name")
         
         row = layout.row()
@@ -61,6 +64,7 @@ class newTool(bpy.types.Panel):
 
         row = layout.row()
         row.prop(obj, 'location')
+
 
 
        
