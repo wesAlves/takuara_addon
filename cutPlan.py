@@ -1,14 +1,17 @@
 import bpy
-#from math import *
 
 def writing_cut_plan():
     objects = bpy.data.objects
-    
+    bpy.data.texts['cut_plan'].write("Length,Width,Qty,Material,Label,Enabled\n")     
     for obj in objects:
         obj_name = obj.name
-        obj_dim = ("Altura: " + str(round(obj.dimensions[0], 2)) + ", Largura: " + str(round(obj.dimensions[1], 2)) + ", Espessura: " + str(round(obj.dimensions[2], 2)))
-        bpy.data.texts['cut_plan'].write(obj.name + "\t")
-        bpy.data.texts['cut_plan'].write(obj_dim + "\n") #só funciona com string
+        obj_dim = (str(round(obj.dimensions[0], 3)*1000) + "," + str(round(obj.dimensions[1], 3)*1000)+ "," + "1") #str(round(obj.dimensions[2], 3)*1000))
+        material = ("Material_%s" %(round(obj.dimensions[2], 3)*1000))
+        
+        bpy.data.texts['cut_plan'].write(obj_dim + ",") #só funciona com string
+        bpy.data.texts['cut_plan'].write(material + ",") #write the material name
+        bpy.data.texts['cut_plan'].write(obj.name + ",true\n") #Add the lastest information to the line
+        
 
 def create_cut_plan():
     bpy.ops.text.new()
