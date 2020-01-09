@@ -62,5 +62,5 @@ def unregister():
     for cls in classes:
         bpy.utils.unregister_class(cls)
 
-if "__name__" == "__main__":
+if __name__ == "__main__":
     register()
