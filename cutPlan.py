@@ -1,12 +1,12 @@
-#TODO - Adequar para que seja uma class e criar menu
 import bpy
+#from math import *
 
 def writing_cut_plan():
     objects = bpy.data.objects
     
     for obj in objects:
         obj_name = obj.name
-        obj_dim = str(obj.dimensions)
+        obj_dim = ("Altura: " + str(round(obj.dimensions[0], 2)) + ", Largura: " + str(round(obj.dimensions[1], 2)) + ", Espessura: " + str(round(obj.dimensions[2], 2)))
         bpy.data.texts['cut_plan'].write(obj.name + "\t")
         bpy.data.texts['cut_plan'].write(obj_dim + "\n") #só funciona com string
 
