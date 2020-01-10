@@ -52,12 +52,5 @@ def rotate_by_button(column, fronRear):
     bpy.context.object.rotation_euler = (
         0,
         ((-column/360)*(2*pi)),
-        ((fronRear/360)*(2*pi))
+        ((-fronRear/360)*(2*pi))
     )
-
-# def rotate_to_front_rear():
-#     bpy.object.rotation_euler = (
-#         0,
-#         ((-90)*(2*pi)),
-#         ((90)*(2*pi)),
-#     )
