@@ -25,7 +25,7 @@ bl_info = {
 import bpy
 from . new_board import *
 from . menu import *
-from . rotate_tool import Rotate_tool_Operator
+from . rotate_tool import *
 from . move_tool import Move_tool_Operator
 from . changeUnitis import ToMillimeters_Operator
 from . clearScene import Delet_all_Operator
@@ -45,10 +45,14 @@ classes = (
     Rotate_tool_Operator,
     Move_tool_Operator,
     ToMillimeters_Operator,
-    newTool,
+    new_Tool,
     Delet_all_Operator,
     Cut_plan_Operator,
-    # Marcenaria_panel_Operator,
+    Rotate_Col_Operator,
+    Rotate_Frot_Rear_Operator,
+    Thickness_06_Operator,
+    Thickness_15_Operator,
+    Thickness_18_Operator
     
     )
 
