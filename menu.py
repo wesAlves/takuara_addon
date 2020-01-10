@@ -1,40 +1,21 @@
 import bpy
 
+
 class Menu_marcenaria_Operator(bpy.types.Header):
     bl_idname = "OBJECT_MT_menu_marcenaria"
     bl_label = "Menu Marcenaria"
     bl_space_type = "VIEW_3D"
 
-
     def draw(self, context):
         layout = self.layout
 
-        layout.operator("object.tomillimeters" ,text = "To Milleters" )
-        layout.operator("object.add_new_board", text = "Add new board")
-        layout.operator("object.delet_all_", text = "Delete all")
-        # layout.operator("object.rotate_tool", text = "Rotate board")
-        # layout.operator("object.move_tool", text = "Move board")
-
-
-
-# class Marcenaria_panel_Operator(bpy.types.Panel):
-    # bl_idname = "object.marcenaria_panel"
-    # bl_label = "Marcenaria Panel"
-    # bl_space_type = "PROPERTIES"
-    # bl_region_type = "WINDOW"
-    # bl_context = "object"
-
-
-    # def draw(self, context):
-    #     Obj = context.object
+        layout.operator("object.tomillimeters", text="To Milleters")
+        layout.operator("object.add_new_board", text="Add new board")
+        layout.operator("object.delet_all_", text="Delete all")
         
-    #     layout = self.layout
         
-    #     row = layout.row()
-    #     row.operator("object.tomillimeters", text = "Change to Millimeters")
-    #     row.operator("object.add_new_board", text = "Add new board")
 
-class newTool(bpy.types.Panel):
+class new_Tool(bpy.types.Panel):
     bl_label = "Marcenaria"
     bl_idname = "OBJECT_PT_marcenaria"
     bl_space_type = "PROPERTIES"
@@ -44,8 +25,6 @@ class newTool(bpy.types.Panel):
     def draw(self, context):
         layout = self.layout
         obj = context.object
-
-        # layout.label(text = "Marcenaria")
 
         row = layout.row()
         row.operator("object.tomillimeters", text = "Change to Millimeters")
@@ -60,7 +39,17 @@ class newTool(bpy.types.Panel):
         row.prop(obj, 'dimensions')
 
         row = layout.row()
-        row.prop(obj, 'rotation_euler')
+        row.operator("object.thickness_06", text = "Thickness 06")
+        row.operator("object.thickness_15", text = "Thickness 15")
+        row.operator("object.thickness_18", text = "Thickness 18")
+
+        row = layout.row()
+        row.operator("object.rotate_col", text = "Create a column")
+        row.operator("object.rotate_frot_rear", text = "Create a Front/Rear")
+
+
+        row = layout.row()
+        row.prop(obj, 'rotation_euler', text = "Rotation")
 
         row = layout.row()
         row.prop(obj, 'location')
