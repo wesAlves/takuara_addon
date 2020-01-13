@@ -46,7 +46,7 @@ class new_Tool(bpy.types.Panel):
         row = layout.row()
         row.operator("object.rotate_x", text = "Rotate X")
         row.operator("object.rotate_y", text = "Rotate Y")
-        row.operator("object.rotate_z", text = "Rotate Z")
+        row.operator("object.rotate_z", text = "Rotate Reset")
 
 
 
