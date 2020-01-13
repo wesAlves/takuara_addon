@@ -30,6 +30,7 @@ from . move_tool import Move_tool_Operator
 from . changeUnitis import ToMillimeters_Operator
 from . clearScene import Delet_all_Operator
 from . cutPlan import Cut_plan_Operator
+from . add_columns import *
 # def panel_func(self, context):
 #     self.layout.operator(Add_new_board_Operator.bl_idname)
 
@@ -52,9 +53,10 @@ classes = (
     Rotate_Frot_Rear_Operator,
     Thickness_06_Operator,
     Thickness_15_Operator,
-    Thickness_18_Operator
-    
-    )
+    Thickness_18_Operator,
+    Side_columns_Operator,
+    FrontRear_columns_Operator,
+)
 
 
 def register():
