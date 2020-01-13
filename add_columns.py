@@ -12,7 +12,7 @@ class Side_columns_Operator(bpy.types.Operator):
 
     def execute(self, context):
         Add_board("side_", self.height, self.width, 15)
-        rotate_by_button(0, -90)
+        rotate_by_button(0, 90)
         return {'FINISHED'}
 
     def invoke(self, context, event):
