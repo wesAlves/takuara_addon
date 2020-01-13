@@ -51,8 +51,7 @@ def Add_board(name, x, y, z):
         ((y/2)/1000),
         ((z/2)/1000)
         )
-
-    bpy.ops.object.transform_apply(location = True, rotation = False, scale = True)
+    bpy.ops.object.transform_apply(location = True, rotation = True, scale = True)
 
 def rotate_by_button(rx, ry):
     bpy.context.object.rotation_euler = (
@@ -60,3 +59,9 @@ def rotate_by_button(rx, ry):
         ((ry/360)*(2*pi)*(-1)),
         0
     )
+    # bpy.context.object.location = (
+    #     (bpy.context.object.location[0]+((rx/1000)/6)),
+    #     (bpy.context.object.location[1]+((ry/1000)/6)),
+    #     (bpy.context.object.location[2])
+    #     )
+    # bpy.ops.object.transform_apply(location = True)
