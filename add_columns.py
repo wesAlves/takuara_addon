@@ -47,7 +47,7 @@ def Add_board(name, x, y, z, rx, ry):
         ((y/2)/1000),
         ((z/2)/1000)
         )
-    bpy.context.object.rotation = (
+    bpy.context.object.rotation_euler = (
         rx,
         ry,
         0
