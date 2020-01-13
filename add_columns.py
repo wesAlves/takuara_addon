@@ -7,8 +7,8 @@ class Side_columns_Operator(bpy.types.Operator):
     bl_idname = "object.side_columns"
     bl_label = "side_columns"
 
-    height = bpy.props.FloatProperty(name = "Height")
     width = bpy.props.FloatProperty(name = "Width")
+    height = bpy.props.FloatProperty(name = "Height")
 
     def execute(self, context):
         Add_board("side_", self.height, self.width, 15)
@@ -25,8 +25,8 @@ class FrontRear_columns_Operator(bpy.types.Operator):
     bl_idname = "object.front_rear_columns"
     bl_label = "Front-Rear_columns"
 
-    height = bpy.props.FloatProperty(name = "Height")
     width = bpy.props.FloatProperty(name = "Width")
+    height = bpy.props.FloatProperty(name = "Height")
 
     def execute(self, context):
         Add_board("front_", self.width, self.height, 15)
@@ -36,6 +36,23 @@ class FrontRear_columns_Operator(bpy.types.Operator):
     def invoke(self, context, event):
         wm = context.window_manager
         return wm.invoke_props_dialog(self)
+
+
+class Top_Bottom_Operator(bpy.types.Operator):
+    bl_idname = "object.top_bottom"
+    bl_label = "Top_Bottom"
+
+    width = bpy.props.FloatProperty(name = "Front")
+    depth = bpy.props.FloatProperty(name = "Side")
+
+    def execute(self, context):
+        Add_board("front_", self.width, self.depth, 15)
+        return {'FINISHED'}
+
+    def invoke(self, context, event):
+        wm = context.window_manager
+        return wm.invoke_props_dialog(self)
+
 
 
 def Add_board(name, x, y, z):

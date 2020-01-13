@@ -57,6 +57,7 @@ classes = (
     Thickness_18_Operator,
     Side_columns_Operator,
     FrontRear_columns_Operator,
+    Top_Bottom_Operator,
 )
 
 
