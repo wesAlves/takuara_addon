@@ -48,11 +48,12 @@ classes = (
     new_Tool,
     Delet_all_Operator,
     Cut_plan_Operator,
-    Rotate_Col_Operator,
-    Rotate_Frot_Rear_Operator,
+    Rotate_X_Operator,
+    Rotate_Y_Operator,
+    Rotate_Z_Operator,
     Thickness_06_Operator,
     Thickness_15_Operator,
-    Thickness_18_Operator
+    Thickness_18_Operator,
     
     )
 
