@@ -45,7 +45,7 @@ class Rotate_Z_Operator(bpy.types.Operator):
     bl_label = "rotate_z"
 
     def execute(self, context):
-        rotate_by_button(null, null, 90)
+        rotate_by_button(0, 0, 90)
         return {'FINISHED'}
 
 
