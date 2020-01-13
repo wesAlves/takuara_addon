@@ -5,11 +5,11 @@ class Side_columns_Operator(bpy.types.Operator):
     bl_idname = "object.side_columns"
     bl_label = "side_columns"
 
-    height = bpy.props.FloatProperty(name = "Width")
-    width = bpy.props.FloatProperty(name = "Height")
+    height = bpy.props.FloatProperty(name = "Height")
+    width = bpy.props.FloatProperty(name = "Width")
 
     def execute(self, context):
-        Add_board("col_", height, width, 15, 90, 0)
+        Add_board("col_", self.height, self.width, 15, 90, 0)
         return {'FINISHED'}
 
     def invoke(self, context, event):
@@ -22,11 +22,11 @@ class FrontRear_columns_Operator(bpy.types.Operator):
     bl_idname = "object.front_rear_columns"
     bl_label = "Front-Rear_columns"
 
-    height = bpy.props.FloatProperty(name = "Width")
-    width = bpy.props.FloatProperty(name = "Height")
+    height = bpy.props.FloatProperty(name = "Height")
+    width = bpy.props.FloatProperty(name = "Width")
 
     def execute(self, context):
-        Add_board("col_", width, height, 15, 0, -90)
+        Add_board("col_", self.width, self.height, 15, 0, -90)
         return {'FINISHED'}
 
     def invoke(self, context, event):
