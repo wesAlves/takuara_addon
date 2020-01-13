@@ -24,20 +24,28 @@ class Rotate_tool_Operator(bpy.types.Operator):
 
 
 
-class Rotate_Col_Operator(bpy.types.Operator):
-    bl_idname = "object.rotate_col"
-    bl_label = "rotate-col"
+class Rotate_X_Operator(bpy.types.Operator):
+    bl_idname = "object.rotate_x"
+    bl_label = "rotate-x"
 
     def execute(self, context):
-        rotate_by_button(90, 0)
+        rotate_by_button(90, 0, 0)
         return {'FINISHED'}
 
-class Rotate_Frot_Rear_Operator(bpy.types.Operator):
-    bl_idname = "object.rotate_frot_rear"
-    bl_label = "Rotate_frot_rear"
+class Rotate_Y_Operator(bpy.types.Operator):
+    bl_idname = "object.rotate_y"
+    bl_label = "rotate_y"
 
     def execute(self, context):
-        rotate_by_button(90, 90)
+        rotate_by_button(0, 90, 0)
+        return {'FINISHED'}
+
+class Rotate_Z_Operator(bpy.types.Operator):
+    bl_idname = "object.rotate_z"
+    bl_label = "rotate_z"
+
+    def execute(self, context):
+        rotate_by_button(0, 0, 0)
         return {'FINISHED'}
 
 
@@ -48,9 +56,9 @@ def rotate_board(x, y, z):
         ((z/360)*(2*pi))
     )
 
-def rotate_by_button(column, fronRear):
+def rotate_by_button(x, y, z):
     bpy.context.object.rotation_euler = (
-        0,
-        ((-column/360)*(2*pi)),
-        ((-fronRear/360)*(2*pi))
+        ((x/360)*(2*pi)),
+        ((-y/360)*(2*pi)),
+        ((-z/360)*(2*pi))
     )
