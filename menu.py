@@ -44,8 +44,10 @@ class new_Tool(bpy.types.Panel):
         row.operator("object.thickness_18", text = "Thickness 18")
 
         row = layout.row()
-        row.operator("object.rotate_col", text = "Create a column")
-        row.operator("object.rotate_frot_rear", text = "Create a Front/Rear")
+        row.operator("object.rotate_x", text = "Rotate X")
+        row.operator("object.rotate_y", text = "Rotate Y")
+        row.operator("object.rotate_z", text = "Rotate Reset")
+
 
 
         row = layout.row()
