@@ -58,7 +58,7 @@ def rotate_board(x, y, z):
 
 def rotate_by_button(x, y, z):
     bpy.context.object.rotation_euler = (
-        ((x/360)*(2*pi)),,
+        ((x/360)*(2*pi)),
         ((-y/360)*(2*pi)),
         ((-z/360)*(2*pi))
     )
