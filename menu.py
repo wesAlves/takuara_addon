@@ -10,10 +10,11 @@ class Menu_marcenaria_Operator(bpy.types.Header):
         layout = self.layout
 
         layout.operator("object.tomillimeters", text="To Milleters")
-        layout.operator("object.add_new_board", text="Add new board")
-        layout.operator("object.side_columns", text = "Add new side")
-        layout.operator("object.front_rear_columns", text = "Add new Front/Rear")
-        layout.operator("object.delet_all_", text="Delete all")
+        # layout.operator("object.add_new_board", text="Add new board")
+        # layout.operator("object.side_columns", text = "Add new side")
+        # layout.operator("object.front_rear_columns", text = "Add new Front/Rear")
+        # layout.operator("object.delet_all_", text="Delete all")
+        layout.operator("object.create_limits", text = "Create a base")
         
         
 
@@ -50,6 +51,8 @@ class new_Tool(bpy.types.Panel):
         row.operator("object.rotate_y", text = "Rotate Y")
         row.operator("object.rotate_z", text = "Rotate Reset")
 
+        # row = layout.row()
+        # row.operator("object.create_limits", text = "Create a base")
 
 
         row = layout.row()
