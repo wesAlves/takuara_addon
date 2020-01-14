@@ -65,11 +65,11 @@ class new_Tool(bpy.types.Panel):
 
         row = layout.row()
         row.operator('object.move_positive_y', text = '\+ Side')
-        row.operator('object.move_positive_y', text = '\+ Side')
+        row.operator('object.move_negative_y', text = '\+ Side')
 
         row = layout.row()
         row.operator('object.move_positive_z', text = '\+ Hight')
-        row.operator('object.move_positive_z', text = '\+ Hight')
+        row.operator('object.move_negative_z', text = '\+ Hight')
 
 
 
