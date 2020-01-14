@@ -40,6 +40,7 @@ def create_cube(): #create a wire that represents the whole shape
     bpy.ops.mesh.primitive_cube_add(location = ((width/2), (depth/2), (height/2)))
     bpy.context.object.dimensions=(width, depth, height)
     bpy.context.object.display_type = 'WIRE'
+    bpy.context.object.hide_select = True
 
 
 set_positions()
@@ -48,6 +49,11 @@ create_cube()
 def create_board(): #create a board to test the tool
     bpy.ops.mesh.primitive_cube_add(location = ((height/2), (depth/2), ((15/2)/1000)))
     bpy.context.object.dimensions=(height, depth, (15/1000))
+    bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+    bpy.context.object.rotation_euler[1] = -1.5708
+    bpy.context.object.location[0] = 0.015
     
     
 create_board()
+
+#collection to main scene collection => C.scene.collection.children.link(col[0])
