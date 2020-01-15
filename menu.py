@@ -65,6 +65,24 @@ class new_Tool(bpy.types.Panel):
         row = layout.row()
         row.prop(obj, 'location')
 
+        layout.label (text = "Move Thickness") 
+        row = layout.row()
+        row.operator('object.move_positive_x', text = '+ Front')
+        row.operator('object.move_negative_x', text = '- Front')
+
+        row = layout.row()
+        row.operator('object.move_positive_y', text = '\+ Side')
+        row.operator('object.move_negative_y', text = '\+ Side')
+
+        row = layout.row()
+        row.operator('object.move_positive_z', text = '\+ Hight')
+        row.operator('object.move_negative_z', text = '\+ Hight')
+
+
+
+
+
+
 
 
        

@@ -31,7 +31,9 @@ from . changeUnitis import ToMillimeters_Operator
 from . clearScene import Delet_all_Operator
 from . cutPlan import Cut_plan_Operator
 from . add_columns import *
+from . thick import *
 from . create_empty import *
+
 # def panel_func(self, context):
 #     self.layout.operator(Add_new_board_Operator.bl_idname)
 
@@ -58,6 +60,12 @@ classes = (
     Thickness_18_Operator,
     Side_columns_Operator,
     FrontRear_columns_Operator,
+    Move_positive_x_Operator,
+    Move_negative_x_Operator,
+    Move_positive_y_Operator,
+    Move_negative_y_Operator,
+    Move_positive_z_Operator,
+    Move_negative_z_Operator,
     Create_limits_Operator,
     Top_Bottom_Operator,
 )
