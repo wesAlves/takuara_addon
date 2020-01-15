@@ -15,6 +15,10 @@ class Menu_marcenaria_Operator(bpy.types.Header):
         # layout.operator("object.front_rear_columns", text = "Add new Front/Rear")
         # layout.operator("object.delet_all_", text="Delete all")
         layout.operator("object.create_limits", text = "Create a base")
+        layout.operator("object.top_bottom", text = "Top/Bottom")
+        layout.operator("object.side_columns", text = "Left/Right")
+        layout.operator("object.front_rear_columns", text = "Front/Rear")
+        layout.operator("object.delet_all_", text="Delete all")
         
         
 

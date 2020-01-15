@@ -59,6 +59,7 @@ classes = (
     Side_columns_Operator,
     FrontRear_columns_Operator,
     Create_limits_Operator,
+    Top_Bottom_Operator,
 )
 
 
