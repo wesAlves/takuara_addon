@@ -33,6 +33,7 @@ from . cutPlan import Cut_plan_Operator
 from . add_columns import *
 from . thick import *
 from . create_empty import *
+from . create_and_place import *
 
 # def panel_func(self, context):
 #     self.layout.operator(Add_new_board_Operator.bl_idname)
@@ -66,8 +67,12 @@ classes = (
     Move_negative_y_Operator,
     Move_positive_z_Operator,
     Move_negative_z_Operator,
+    Move_To_origin_Operator,
     Create_limits_Operator,
     Top_Bottom_Operator,
+    Side_column_Operator,
+    Front_column_Operator,
+    Line_board_Operator,
 )
 
 

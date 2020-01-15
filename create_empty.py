@@ -6,9 +6,9 @@ class Create_limits_Operator(bpy.types.Operator):
     bl_label = "Create_limits"
 
     origin = bpy.props.FloatProperty(name="Set the origin")
-    wd = bpy.props.FloatProperty(name="Set the Width")/1000
-    dp = bpy.props.FloatProperty(name="Set the Depth")/1000
-    hg = bpy.props.FloatProperty(name="Set the Height")/1000
+    wd = bpy.props.FloatProperty(name="Set the Width")
+    dp = bpy.props.FloatProperty(name="Set the Depth")
+    hg = bpy.props.FloatProperty(name="Set the Height")
 
     def execute(self, context):
         empty_positions = [self.origin, self.wd, self.dp, self.hg]
