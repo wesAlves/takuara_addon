@@ -10,14 +10,10 @@ class Menu_marcenaria_Operator(bpy.types.Header):
         layout = self.layout
 
         layout.operator("object.tomillimeters", text="To Milleters")
-        # layout.operator("object.add_new_board", text="Add new board")
-        # layout.operator("object.side_columns", text = "Add new side")
-        # layout.operator("object.front_rear_columns", text = "Add new Front/Rear")
-        # layout.operator("object.delet_all_", text="Delete all")
         layout.operator("object.create_limits", text = "Create a base")
-        layout.operator("object.top_bottom", text = "Top/Bottom")
-        layout.operator("object.side_columns", text = "Left/Right")
-        layout.operator("object.front_rear_columns", text = "Front/Rear")
+        layout.operator("object.side_column", text="Add new side")
+        layout.operator("object.front_column", text = "Add new Front")
+        layout.operator("object.line_board", text = "Line")
         layout.operator("object.delet_all_", text="Delete all")
         
         
@@ -67,16 +63,21 @@ class new_Tool(bpy.types.Panel):
 
         layout.label (text = "Move Thickness") 
         row = layout.row()
-        row.operator('object.move_positive_x', text = '+ Front')
         row.operator('object.move_negative_x', text = '- Front')
+        row.operator('object.move_positive_x', text = '+ Front')
 
         row = layout.row()
+        row.operator('object.move_negative_y', text = '\- Side')
         row.operator('object.move_positive_y', text = '\+ Side')
-        row.operator('object.move_negative_y', text = '\+ Side')
 
         row = layout.row()
+        row.operator('object.move_negative_z', text = '\- Hight')
         row.operator('object.move_positive_z', text = '\+ Hight')
-        row.operator('object.move_negative_z', text = '\+ Hight')
+
+        row = layout.row()
+        row.operator('object.move_to_origin', text = 'To Origin')
+
+
 
 
 

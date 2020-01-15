@@ -21,32 +21,42 @@ class Move_positive_y_Operator(bpy.types.Operator):
     bl_idname = "object.move_positive_y"
     bl_label = "Move_positive_y"
 
-    def eyecute(self, conteyt):
-        move_loc(0, "positive")
+    def execute(self, conteyt):
+        move_loc(1, "positive")
         return {'FINISHED'}
 
 class Move_negative_y_Operator(bpy.types.Operator):
     bl_idname = "object.move_negative_y"
     bl_label = "Move_negative_y"
 
-    def eyecute(self, conteyt):
-        move_loc(0, "negative")
+    def execute(self, conteyt):
+        move_loc(1, "negative")
         return {'FINISHED'}
 
 class Move_positive_z_Operator(bpy.types.Operator):
     bl_idname = "object.move_positive_z"
     bl_label = "Move_positive_z"
 
-    def ezecute(self, contezt):
-        move_loc(0, "positive")
+    def execute(self, contezt):
+        move_loc(2, "positive")
         return {'FINISHED'}
 
 class Move_negative_z_Operator(bpy.types.Operator):
     bl_idname = "object.move_negative_z"
     bl_label = "Move_negative_z"
 
-    def ezecute(self, contezt):
-        move_loc(0, "negative")
+    def execute(self, contezt):
+        move_loc(2, "negative")
+        return {'FINISHED'}
+
+class Move_To_origin_Operator(bpy.types.Operator):
+    bl_idname = "object.move_to_origin"
+    bl_label = "Move_to_origin"
+
+    def execute(self, contezt):
+        move_loc(0, "origin")
+        move_loc(1, "origin")
+        move_loc(2, "origin")
         return {'FINISHED'}
 
 
@@ -79,6 +89,8 @@ def move_loc(axis, direction):
             mov = z - dz
         else:
             pass
+    elif (direction == "origin"):
+        mov = 0
     else:
         pass
 
