@@ -74,7 +74,10 @@ classes = (
     Side_column_Operator,
     Front_column_Operator,
     Line_board_Operator,
-    Adj_width_Operator
+    Shrink_width_Operator,
+    Shrink_height_Operator,
+    Expand_width_Operator,
+    Expand_height_Operator,
 )
 
 

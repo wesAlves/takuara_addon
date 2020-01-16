@@ -1,12 +1,36 @@
 import bpy
 
 
-class Adj_width_Operator(bpy.types.Operator):
-    bl_idname = "object.adj_width"
-    bl_label = "Adj_width"
+class Shrink_width_Operator(bpy.types.Operator):
+    bl_idname = "object.shrink_width"
+    bl_label = "Shrink_width"
 
     def execute(self, context):
         resize_by("x", "shrink")        
+        return {'FINISHED'}
+
+class Expand_width_Operator(bpy.types.Operator):
+    bl_idname = "object.expand_width"
+    bl_label = "Expand_width"
+
+    def execute(self, context):
+        resize_by("x", "expand")        
+        return {'FINISHED'}
+
+class Shrink_height_Operator(bpy.types.Operator):
+    bl_idname = "object.shrink_height"
+    bl_label = "Shrink_height"
+
+    def execute(self, context):
+        resize_by("x", "shrink")        
+        return {'FINISHED'}
+
+class Expand_height_Operator(bpy.types.Operator):
+    bl_idname = "object.expand_height"
+    bl_label = "Expand_height"
+
+    def execute(self, context):
+        resize_by("x", "expand")        
         return {'FINISHED'}
 
 def resize_by(axis, act):
@@ -45,5 +69,3 @@ def resize_by(axis, act):
             else:
                 bpy.context.object.location[2]=(locY-thickness)
 
-
-resize_by("y", 'expand')
