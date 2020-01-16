@@ -22,7 +22,7 @@ class Shrink_height_Operator(bpy.types.Operator):
     bl_label = "Shrink_height"
 
     def execute(self, context):
-        resize_by("x", "shrink")        
+        resize_by("y", "shrink")        
         return {'FINISHED'}
 
 class Expand_height_Operator(bpy.types.Operator):
@@ -30,7 +30,7 @@ class Expand_height_Operator(bpy.types.Operator):
     bl_label = "Expand_height"
 
     def execute(self, context):
-        resize_by("x", "expand")        
+        resize_by("y", "expand")        
         return {'FINISHED'}
 
 def resize_by(axis, act):
