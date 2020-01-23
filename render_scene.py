@@ -1,4 +1,5 @@
 import bpy
+# import base_render.blend
 
 # def render_single(frame):
 #     bpy.context.scene.frame_set(frame)
@@ -18,5 +19,18 @@ class Render_studio_Operator(bpy.types.Operator):
 
 
 def r_studio():
-    bpy.ops.wm.open_mainfile(".\\render_scene.py")
+    bpy.ops.wm.open_mainfile(filepath=(".\\base_render.blend"))
     print("working")
+
+#### Open a file 
+'''import bpy
+import os
+
+user = os.getlogin()
+dir = "C:\\Users\\%s\\Documents\\Nova pasta" %(user)
+
+def openFile():
+    bpy.ops.wm.open_mainfile(filepath=("%s\\test.blend" %(dir)))
+
+print(dir)
+openFile()'''
