@@ -1,4 +1,5 @@
 import bpy
+import os
 # import base_render.blend
 
 # def render_single(frame):
@@ -19,18 +20,7 @@ class Render_studio_Operator(bpy.types.Operator):
 
 
 def r_studio():
-    bpy.ops.wm.open_mainfile(filepath=(".\\base_render.blend"))
+    user = os.getlogin()
+    dir = "C:\\Users\\%s\\AppData\\Roaming\\Blender Foundation\\Blender\\2.81\\scripts\\addons\\takuara_addon-wes-feature-create-render-setup" %(user)
+    bpy.ops.wm.open_mainfile(filepath=("%s\\base_render.blend" %(dir)))
     print("working")
-
-#### Open a file 
-'''import bpy
-import os
-
-user = os.getlogin()
-dir = "C:\\Users\\%s\\Documents\\Nova pasta" %(user)
-
-def openFile():
-    bpy.ops.wm.open_mainfile(filepath=("%s\\test.blend" %(dir)))
-
-print(dir)
-openFile()'''
