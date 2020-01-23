@@ -9,15 +9,16 @@ class Menu_marcenaria_Operator(bpy.types.Header):
     def draw(self, context):
         layout = self.layout
 
-        layout.operator("object.tomillimeters", text="To Milleters")
-        layout.operator("object.create_limits", text = "Create a base")
-        layout.operator("object.side_column", text="Add new side")
-        layout.operator("object.front_column", text = "Add new Front")
-        layout.operator("object.line_board", text = "Line")
-        layout.operator("object.delet_all_", text="Delete all")
+        # layout.operator("object.tomillimeters", text="To Milleters")
+        # layout.operator("object.create_limits", text = "Create a base")
+        # layout.operator("object.side_column", text="Add new side")
+        # layout.operator("object.front_column", text = "Add new Front")
+        # layout.operator("object.line_board", text = "Line")
+        # layout.operator("object.delet_all_", text="Delete all")
         
         # layout.operator("object.adj_width", text="Shirink X")
 
+        layout.operator(object.render_studio, text="Open Studio Scene")
         
 
 class new_Tool(bpy.types.Panel):
