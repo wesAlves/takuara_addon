@@ -24,3 +24,17 @@ def r_studio():
     dir = "C:\\Users\\%s\\AppData\\Roaming\\Blender Foundation\\Blender\\2.81\\scripts\\addons\\takuara_addon-wes-feature-create-render-setup" %(user)
     bpy.ops.wm.open_mainfile(filepath=("%s\\base_render.blend" %(dir)))
     print("working")
+
+This works perfectly
+import bpy
+import os
+
+user = os.getlogin()
+dir = "C:\\Users\\%s\\AppData\\Roaming\\Blender Foundation\\Blender\\2.81\\scripts\\addons\\takuara_addon-wes-feature-create-render-setup" %(user)
+myfile = "%s\\base_render.blend" %(dir)
+#print(myfile)
+with bpy.data.libraries.load(myfile) as (data_from, data_to):
+    files = []
+    for obj in data_from.objects:
+        files.append({'name' : obj})
+    bpy.ops.wm.append(directory=myfile+'\\Object\\', files=files)
