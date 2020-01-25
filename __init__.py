@@ -35,6 +35,7 @@ from . thick import *
 from . create_empty import *
 from . create_and_place import *
 from . adj_size_by_position import *
+from . render_scene import *
 
 # def panel_func(self, context):
 #     self.layout.operator(Add_new_board_Operator.bl_idname)
@@ -78,6 +79,8 @@ classes = (
     Shrink_height_Operator,
     Expand_width_Operator,
     Expand_height_Operator,
+    Render_studio_Operator,
+    Attach_Operator,
 )
 
 
