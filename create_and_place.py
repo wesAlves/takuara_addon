@@ -10,8 +10,8 @@ class Side_column_Operator(bpy.types.Operator):
 
     def execute(self, context):
         get_locators()
-        Add_board("side_board", get_locators()[2].location[2], get_locators()[3].location[1])
-        rotate_fit(0, 90)
+        Add_board("Side_board", get_locators()[3].location[1], get_locators()[2].location[2])
+        rotate_fit(90, 90)
         return {'FINISHED'}
 
 
@@ -21,7 +21,7 @@ class Front_column_Operator(bpy.types.Operator):
 
     def execute(self, context):
         get_locators()
-        Add_board("side_board", get_locators()[1].location[0], get_locators()[2].location[2])
+        Add_board("Front_board", get_locators()[1].location[0], get_locators()[2].location[2])
         rotate_fit(90, 0)
         return {'FINISHED'}
 
@@ -32,16 +32,16 @@ class Line_board_Operator(bpy.types.Operator):
 
     def execute(self, context):
         get_locators()
-        Add_board("side_board", get_locators()[1].location[0], get_locators()[3].location[1])
+        Add_board("Line_board", get_locators()[1].location[0], get_locators()[3].location[1])
         return {'FINISHED'}
 
 
-def Add_board(name, x, y):
+def Add_board(name, width, height):
     bpy.ops.mesh.primitive_cube_add()
     bpy.context.object.name = name
     bpy.context.object.dimensions = (
-        ((x)),
-        ((y)),
+        ((width)),
+        ((height)),
         ((15)/1000)
     )
     bpy.context.object.location = (
@@ -61,6 +61,6 @@ def get_locators():
 def rotate_fit(front, side):
     bpy.context.object.rotation_euler = (
         ((front/360)*(2*pi)),
-        ((-side/360)*(2*pi)),
-        0
+        0,
+        ((side/360)*(2*pi))
     )

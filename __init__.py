@@ -34,6 +34,7 @@ from . add_columns import *
 from . thick import *
 from . create_empty import *
 from . create_and_place import *
+from . adj_size_by_position import *
 
 # def panel_func(self, context):
 #     self.layout.operator(Add_new_board_Operator.bl_idname)
@@ -73,6 +74,10 @@ classes = (
     Side_column_Operator,
     Front_column_Operator,
     Line_board_Operator,
+    Shrink_width_Operator,
+    Shrink_height_Operator,
+    Expand_width_Operator,
+    Expand_height_Operator,
 )
 
 

@@ -16,6 +16,8 @@ class Menu_marcenaria_Operator(bpy.types.Header):
         layout.operator("object.line_board", text = "Line")
         layout.operator("object.delet_all_", text="Delete all")
         
+        # layout.operator("object.adj_width", text="Shirink X")
+
         
 
 class new_Tool(bpy.types.Panel):
@@ -29,31 +31,34 @@ class new_Tool(bpy.types.Panel):
         layout = self.layout
         obj = context.object
 
-        row = layout.row()
-        row.operator("object.tomillimeters", text = "Change to Millimeters")
-        
-        row = layout.row()
-        row.operator("object.cut_plan", text = 'Create cut plan')
-
+        layout.label (text = "Board name") 
         row = layout.row()
         row.prop(obj, "name")
         
+        layout.label (text = "Dimensions") 
         row = layout.row()
         row.prop(obj, 'dimensions')
 
+        layout.label (text = "Shrink") 
+        row = layout.row()
+        row.operator("object.shrink_width", text = "Shrink Width")
+        row.operator("object.shrink_height", text = "Shrink Height")
+        layout.label (text = "Expand") 
+        row = layout.row()
+        row.operator("object.expand_width", text = "Expand  Width")
+        row.operator("object.expand_height", text = "Expand Height")
+
+        layout.label (text = "Set thickness") 
         row = layout.row()
         row.operator("object.thickness_06", text = "Thickness 06")
         row.operator("object.thickness_15", text = "Thickness 15")
         row.operator("object.thickness_18", text = "Thickness 18")
 
+        layout.label (text = "Rotation") 
         row = layout.row()
         row.operator("object.rotate_x", text = "Rotate X")
         row.operator("object.rotate_y", text = "Rotate Y")
         row.operator("object.rotate_z", text = "Rotate Reset")
-
-        # row = layout.row()
-        # row.operator("object.create_limits", text = "Create a base")
-
 
         row = layout.row()
         row.prop(obj, 'rotation_euler', text = "Rotation")
@@ -71,19 +76,16 @@ class new_Tool(bpy.types.Panel):
         row.operator('object.move_positive_y', text = '\+ Side')
 
         row = layout.row()
-        row.operator('object.move_negative_z', text = '\- Hight')
-        row.operator('object.move_positive_z', text = '\+ Hight')
+        row.operator('object.move_negative_z', text = '\- Height')
+        row.operator('object.move_positive_z', text = '\+ Height')
 
         row = layout.row()
         row.operator('object.move_to_origin', text = 'To Origin')
 
+        layout.label (text = "Make a cut plan") 
+        row = layout.row()
+        row.operator("object.cut_plan", text = 'Create cut plan')
 
-
-
-
-
-
-
-
-
-       
+        layout.label (text = "Change units") 
+        row = layout.row()
+        row.operator("object.tomillimeters", text = "Change to Millimeters")
