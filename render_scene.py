@@ -9,53 +9,81 @@ class Render_studio_Operator(bpy.types.Operator):
         r_studio()
         return {'FINISHED'}
 
+class Attach_Operator(bpy.types.Operator):
+    bl_idname = "object.attach"
+    bl_label = "Attach"
+
+    def execute(self, context):
+        attach_scenes()
+        return {'FINISHED'}
+
 
 def r_studio():
     user = os.getlogin()
     dir = "C:\\Users\\%s\\AppData\\Roaming\\Blender Foundation\\Blender\\2.81\\scripts\\addons\\takuara_addon" %(user)
     myfile = "%s\\base_render.blend" %(dir)
-    # bpy.ops.wm.open_mainfile(filepath=("%s\\base_render.blend" %(dir)))
+    files = []
+
     with bpy.data.libraries.load(myfile) as (data_from, data_to):
         data_to.scenes = ["render_scene"]
-    print("working")
-
-# This works perfectly to open
-# import bpy
-# import os
-
-# user = os.getlogin()
-# dir = "C:\\Users\\%s\\AppData\\Roaming\\Blender Foundation\\Blender\\2.81\\scripts\\addons\\takuara_addon-wes-feature-create-render-setup" %(user)
-# myfile = "%s\\base_render.blend" %(dir)
-# #print(myfile)
-# with bpy.data.libraries.load(myfile) as (data_from, data_to):
-#     files = []
-#     for obj in data_from.objects:
-#         files.append({'name' : obj})
-#     bpy.ops.wm.append(directory=myfile+'\\Object\\', files=files)
+        data_to.worlds = ['studio', 'artist_workshop', 'entrance_hall', 'varanda']
 
 
-# This works to append
-# import bpy
-# import os
+def attach_scenes():
+    thisScene = bpy.data.collections
+    render_coll = bpy.data.scenes['render_scene'].collection.children['render_collection']
+    for col in range(len(thisScene)):
+        if thisScene[col].name != "render_collection":
+            bpy.ops.object.select_all(action='DESELECT')
+            removeToRender()
+            addToRender(thisScene, render_coll, col)
 
-# user = os.getlogin()
-# dir = "C:\\Users\\%s\\AppData\\Roaming\\Blender Foundation\\Blender\\2.81\\scripts\\addons\\takuara_addon-wes-feature-create-render-setup" %(user)
-# myfile = "%s\\base_render.blend" %(dir)
-# #print(myfile)
-# with bpy.data.libraries.load(myfile) as (data_from, data_to):
-#     data_to.scenes = ["teste"]
+def addToRender(thisScene, render_coll, col):
+    bpy.ops.object.select_same_collection(collection="render_collection")
+    bpy.ops.object.delete()
+    bpy.ops.object.collection_instance_add(name=thisScene[col].name, collection = 'render_collection', align="WORLD", location=(0, 0, 0))
+    render_coll.objects.link(bpy.context.object)
+    bpy.ops.collection.objects_remove_active()
+    print(thisScene[col])
+    print('criado')
+    
+def removeToRender():
+    bpy.ops.object.select_same_collection(collection="render_collection")
+    bpy.ops.object.delete()
+    print('yes is workin')
 
-    # https://docs.blender.org/api/current/bpy.types.BlendDataLibraries.html?highlight=data_from
 
-###Add the other scene to render scene
-    import bpy
+
+'''
+import bpy
 
 thisScene = bpy.data.collections
-#print(len(thisScene))
-print("NewLine")
+render_coll = bpy.data.scenes['render_scene'].collection.children['render_collection']
+
+def addToRender():
+    bpy.ops.object.select_same_collection(collection="render_collection")
+    bpy.ops.object.delete()
+    bpy.ops.object.collection_instance_add(name=thisScene[col].name, collection = 'render_collection', align="WORLD", location=(0, 0, 0))
+    render_coll.objects.link(bpy.context.object)
+    bpy.ops.collection.objects_remove_active()
+    print(thisScene[col])
+    print('criado')
+    
+def removeToRender():
+    bpy.ops.object.select_same_collection(collection="render_collection")
+    bpy.ops.object.delete()
+    print('yes is workin')
+
 
 for col in range(len(thisScene)):
     if thisScene[col].name != "render_collection":
-        bpy.ops.object.collection_instance_add(name=thisScene[col].name, collection="render_collection")
-        print(col)
-        print(thisScene[col].name)
+        bpy.ops.object.select_all(action='DESELECT')
+        if thisScene[col].name in render_coll.objects:
+            removeToRender()
+            addToRender()            
+            print('yes is workin')
+        else:
+            addToRender()
+            print('criado')
+
+  '''

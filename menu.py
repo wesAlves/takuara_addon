@@ -19,6 +19,8 @@ class Menu_marcenaria_Operator(bpy.types.Header):
         # layout.operator("object.adj_width", text="Shirink X")
 
         layout.operator("object.render_studio", text="Open Studio Scene")
+        layout.operator("object.attach", text="Attach to render")
+
         
 
 class new_Tool(bpy.types.Panel):

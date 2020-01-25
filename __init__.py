@@ -80,6 +80,7 @@ classes = (
     Expand_width_Operator,
     Expand_height_Operator,
     Render_studio_Operator,
+    Attach_Operator,
 )
 
 
