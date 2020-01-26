@@ -16,7 +16,7 @@ bl_info = {
     "author" : "Wes",
     "description" : "",
     "blender" : (2, 80, 0),
-    "version" : (0, 0, 1),
+    "version" : (1, 0, 0),
     "location" : "",
     "warning" : "",
     "category" : "Generic"
@@ -24,7 +24,7 @@ bl_info = {
 
 import bpy
 from . new_board import *
-from . menu import *
+# from . menu import *
 from . rotate_tool import *
 from . move_tool import Move_tool_Operator
 from . changeUnitis import ToMillimeters_Operator
@@ -36,23 +36,13 @@ from . create_empty import *
 from . create_and_place import *
 from . adj_size_by_position import *
 from . render_scene import *
-
-# def panel_func(self, context):
-#     self.layout.operator(Add_new_board_Operator.bl_idname)
-
-# def panel_func(self, context):
-    # self.layout.operator(Add_new_board_Operator.bl_idname)
-
-# def menu_draw(self, context):
-#     self.layout.operator("wm.save_homefile")
+from . ui import *
 
 classes = (
     Add_new_board_Operator,
-    Menu_marcenaria_Operator,
     Rotate_tool_Operator,
     Move_tool_Operator,
     ToMillimeters_Operator,
-    new_Tool,
     Delet_all_Operator,
     Cut_plan_Operator,
     Rotate_X_Operator,
@@ -71,16 +61,27 @@ classes = (
     Move_negative_z_Operator,
     Move_To_origin_Operator,
     Create_limits_Operator,
-    Top_Bottom_Operator,
-    Side_column_Operator,
-    Front_column_Operator,
-    Line_board_Operator,
     Shrink_width_Operator,
     Shrink_height_Operator,
     Expand_width_Operator,
     Expand_height_Operator,
     Render_studio_Operator,
     Attach_Operator,
+    Side_L_column_Operator,
+    Side_R_column_Operator,
+    Side_M_column_Operator,
+    Front_column_Operator,
+    Back_column_Operator,
+    FB_M_column_Operator,
+    Top_board_Operator,
+    Bottom_board_Operator,
+    Line_board_Operator,
+    Main_Controls_PT_panel,
+    Creation_Controls_PT_panel,
+    Adjusts_Controls_PT_panel,
+    Render_Controls_PT_panel,
+    Cut_Plane_PT_panel,
+    
 )
 
 

@@ -11,7 +11,7 @@ class Create_limits_Operator(bpy.types.Operator):
     hg = bpy.props.FloatProperty(name="Set the Height")
 
     def execute(self, context):
-        empty_positions = [self.origin, self.wd, self.dp, self.hg]
+        empty_positions = [(self.origin/1000), (self.wd/1000), (self.dp/1000), (self.hg/1000)]
 
         width = (empty_positions[1]-empty_positions[0])
         depth = (empty_positions[2]-empty_positions[0])
@@ -59,6 +59,8 @@ def create_base(width, depth, height):  # create a wire that represents the whol
     bpy.context.object.dimensions = (width, depth, height)
     bpy.context.object.display_type = 'WIRE'
     bpy.context.object.hide_select = True
+    bpy.context.object.hide_render = True
+
 
 
 def create_board(width, depth, height):  # create a board to test the tool
