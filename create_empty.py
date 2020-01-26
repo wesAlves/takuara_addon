@@ -19,28 +19,19 @@ class Create_limits_Operator(bpy.types.Operator):
 
         print(empty_positions)
 
-        for i in range(len(empty_positions)):
-            if(empty_positions[i] == empty_positions[0]):
-                create_empty(empty_positions[0], 0,0)
-                bpy.context.object.name=("Origin_(%s, %s, %s)" %(empty_positions[0], empty_positions[0], empty_positions[0]))
-                bpy.context.object.hide_viewport = True
+        create_empty(empty_positions[0], 0,0)
+        bpy.context.object.name=("Origin_(%s, %s, %s)" %(empty_positions[0], empty_positions[0], empty_positions[0]))
+        bpy.context.object.hide_viewport = True
+        create_empty(empty_positions[1], 0,0)
+        bpy.context.object.name=("width")
+        bpy.context.object.hide_viewport = True
+        create_empty(0, empty_positions[2],0)
+        bpy.context.object.name=("depth")
+        bpy.context.object.hide_viewport = True
+        create_empty(0, 0, empty_positions[3])
+        bpy.context.object.name=("height")
+        bpy.context.object.hide_viewport = True
 
-            elif(empty_positions[i] == empty_positions[1]):
-                create_empty(empty_positions[1], 0,0)
-                bpy.context.object.name=("width")
-                bpy.context.object.hide_viewport = True
-
-            elif(empty_positions[i] == empty_positions[2]):
-                create_empty(0, empty_positions[2],0)
-                bpy.context.object.name=("depth")
-                bpy.context.object.hide_viewport = True
-
-            elif(empty_positions[i] == empty_positions[3]):
-                create_empty(0, 0, empty_positions[3])
-                bpy.context.object.name=("height")
-                bpy.context.object.hide_viewport = True
-
-            i+=1
 
         create_base(width, depth, height)
         return {'FINISHED'}
