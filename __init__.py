@@ -17,7 +17,7 @@ bl_info = {
     "description" : "",
     "blender" : (2, 80, 0),
     "version" : (0, 1, 0),
-    "location" : "",
+    "location" : "takuara_addon",
     "warning" : "",
     "category" : "Generic"
 }
