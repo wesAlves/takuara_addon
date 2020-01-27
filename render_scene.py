@@ -1,5 +1,6 @@
 import bpy
 import os
+import addon_utils
 
 class Render_studio_Operator(bpy.types.Operator):
     bl_idname = "object.render_studio"
@@ -20,7 +21,12 @@ class Attach_Operator(bpy.types.Operator):
 
 def r_studio():
     user = os.getlogin()
-    dir = "C:\\Users\\%s\\AppData\\Roaming\\Blender Foundation\\Blender\\2.81\\scripts\\addons\\takuara_addon" %(user)
+    for mod in (addon_utils.addons_fake_modules):
+        location = addon_utils.addons_fake_modules[mod].bl_info['location']
+        if location == 'takuara_addon':
+            version = "%s%s%s" %(addon_utils.addons_fake_modules[mod].bl_info['version'][0], addon_utils.addons_fake_modules[mod].bl_info['version'][1], addon_utils.addons_fake_modules[mod].bl_info['version'][2])
+    cVersion = ("%s-%s" %(location, version))
+    dir = "C:\\Users\\%s\\AppData\\Roaming\\Blender Foundation\\Blender\\2.81\\scripts\\addons\\%s" %(user,cVersion)
     myfile = "%s\\base_render.blend" %(dir)
     files = []
 
