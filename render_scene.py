@@ -26,7 +26,7 @@ for mod in (addon_utils.addons_fake_modules):
     location = addon_utils.addons_fake_modules[mod].bl_info['location']
     if location == 'takuara_addon':
         ver = "%s%s%s" %(addon_utils.addons_fake_modules[mod].bl_info['version'][0], addon_utils.addons_fake_modules[mod].bl_info['version'][1], addon_utils.addons_fake_modules[mod].bl_info['version'][2])
-    cVersion = ("%s-%s" %(location, version))
+    cVersion = ("%s-%s" %(location, ver))
     dir = "C:\\Users\\%s\\AppData\\Roaming\\Blender Foundation\\Blender\\2.81\\scripts\\addons\\%s" %(user,cVersion)
     myfile = "%s\\base_render.blend" %(dir)
     files = []
