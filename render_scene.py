@@ -20,14 +20,13 @@ class Attach_Operator(bpy.types.Operator):
 
 
 def r_studio():
-    # user = os.getlogin()
+    user = os.getlogin()
     addon_utils.modules_refresh()
     for mod in (addon_utils.addons_fake_modules):
         location = addon_utils.addons_fake_modules[mod].bl_info['location']
         if location == 'takuara_addon':
             ver = "%s%s%s" %(addon_utils.addons_fake_modules[mod].bl_info['version'][0], addon_utils.addons_fake_modules[mod].bl_info['version'][1], addon_utils.addons_fake_modules[mod].bl_info['version'][2])
             cVersion = ("%s-%s" %(location, ver))
-            # dir = "C:\\Users\\%s\\AppData\\Roaming\\Blender Foundation\\Blender\\2.81\\scripts\\addons\\%s" %(user,cVersion)
             dir = select_path[1]
             myfile = "%s\\base_render.blend" %(dir)
             files = []
@@ -60,4 +59,3 @@ def removeToRender():
     print('yes is workin')
 
 select_path = addon_utils.paths()
-
