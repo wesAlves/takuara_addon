@@ -16,7 +16,7 @@ bl_info = {
     "author" : "Wes",
     "description" : "",
     "blender" : (2, 80, 0),
-    "version" : (0, 1, 1),
+    "version" : (0, 1, 2),
     "location" : "takuara_addon",
     "warning" : "",
     "category" : "Generic"
