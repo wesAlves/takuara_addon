@@ -59,7 +59,7 @@ def create_board(width, depth, height):  # create a board to test the tool
     bpy.context.object.dimensions = (height, depth, (15/1000))
     bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
     bpy.context.object.rotation_euler[1] = -1.5708
-    bpy.context.object.location[0] = 0.015
+    bpy.context.object.location[0] = 0.010
 
 
 # collection to main scene collection => C.scene.collection.children.link(col[0])
